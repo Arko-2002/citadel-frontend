@@ -42,7 +42,7 @@ function Navbar({ navRender }) {
       const getCommunity = async () => {
         try {
           const res = await axios.post(
-            'http://localhost:1337/api/user/community',
+            `${import.meta.env.VITE_BASE_API}/api/user/community`,
             {},
             {
               withCredentials: true,
@@ -103,7 +103,7 @@ function Navbar({ navRender }) {
   const handleLogOut = async (e) => {
     e.preventDefault();
     await axios.post(
-      'http://localhost:1337/api/auth/logout',
+      `${import.meta.env.VITE_BASE_API}/api/auth/logout`,
       {},
       {
         withCredentials: true,
